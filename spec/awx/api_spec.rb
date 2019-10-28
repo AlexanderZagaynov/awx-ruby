@@ -1,9 +1,7 @@
-RSpec.describe Awx::Api do
-  it "has a version number" do
-    expect(Awx::Api::VERSION).not_to be nil
-  end
+# frozen_string_literal: true
 
-  it "does something useful" do
-    expect(false).to eq(true)
+RSpec.describe Awx::Api do
+  it 'has a version number' do
+    expect(Awx::Api::VERSION).to_not be nil
   end
 end

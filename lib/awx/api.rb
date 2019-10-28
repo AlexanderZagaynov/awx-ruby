@@ -1,4 +1,6 @@
-require "awx/api/version"
+# frozen_string_literal: true
+
+require 'awx/api/version'
 
 module Awx
   module Api
