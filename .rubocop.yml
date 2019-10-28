@@ -1,0 +1,285 @@
+require:
+- rubocop-rspec
+- rubocop-performance
+
+# Common configuration.
+
+AllCops:
+  DisplayStyleGuide: true
+  ExtraDetails: true
+
+#################### Bundler ###############################
+
+Bundler/OrderedGems:
+  Enabled: false
+
+#################### Gemspec ###############################
+
+Gemspec/OrderedDependencies:
+  Enabled: false
+
+#################### Layout ###########################
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/ClassStructure:
+  Enabled: true
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
+
+Layout/EmptyLinesAroundBeginBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/FirstMethodParameterLineBreak:
+  Enabled: true
+
+Layout/HeredocArgumentClosingParenthesis:
+  Enabled: true
+
+Layout/IndentFirstArgument:
+  EnforcedStyle: consistent_relative_to_receiver
+
+Layout/IndentFirstArrayElement:
+  EnforcedStyle: consistent
+
+Layout/IndentFirstHashElement:
+  EnforcedStyle: consistent
+
+Layout/LeadingCommentSpace:
+  AllowDoxygenCommentStyle: true
+
+Layout/MultilineArrayLineBreaks:
+  Enabled: true
+
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: true
+
+#################### Lint ##################################
+
+Lint/AmbiguousOperator:
+  Enabled: false
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Lint/HandleExceptions:
+  AllowComments: true
+
+Lint/HeredocMethodCallPosition:
+  Enabled: true
+
+Lint/NumberConversion:
+  Enabled: true
+
+#################### Metrics ###############################
+
+Metrics/BlockNesting:
+  CountBlocks: true
+
+Metrics/LineLength:
+  Max: 120
+
+################## Migration #############################
+
+Migration/DepartmentName:
+  Enabled: true
+
+#################### Naming ##############################
+
+# Naming/FileName:
+#   Exclude:
+#   - 'bin/**/*'
+#   - 'spec/**/*'
+#   ExpectMatchingDefinition: true
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional
+
+#################### Style ###############################
+
+Style/AccessModifierDeclarations:
+  Enabled: false
+
+Style/AutoResourceCleanup:
+  Enabled: true
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/CommentedKeyword:
+  Enabled: false
+
+Style/ConstantVisibility:
+  Enabled: true
+
+Style/DateTime:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/FloatDivision:
+  EnforcedStyle: fdiv
+
+Style/GuardClause:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/ImplicitRuntimeError:
+  Enabled: true
+
+Style/InverseMethods:
+  InverseMethods:
+    :any?: :none?
+    :even?: :odd?
+    :==: :!=
+    :=~: :!~
+    :<: :>=
+    :>: :<=
+    # `ActiveSupport` defines some common inverse methods.
+    # They are listed below, and not enabled by default.
+    :present?: :blank?,
+    :include?: :exclude?
+
+Style/IpAddresses:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: false
+
+Style/MixinGrouping:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/MutableConstant:
+  EnforcedStyle: strict
+
+Style/NestedParenthesizedCalls:
+  Enabled: false
+
+Style/Next:
+  Enabled: false
+
+Style/OptionHash:
+  Enabled: true
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/RegexpLiteral:
+  EnforcedStyle: mixed
+
+Style/ReturnNil:
+  Enabled: true
+
+Style/Send:
+  Enabled: true
+
+Style/StringMethods:
+  Enabled: true
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+#################### rubocop-rspec #######################
+
+RSpec/AlignLeftLetBrace:
+  Enabled: true
+
+RSpec/AlignRightLetBrace:
+  Enabled: true
+
+# RSpec/ContextMethod:
+#   Enabled: false
+
+RSpec/ExpectChange:
+  EnforcedStyle: block
+
+RSpec/MessageExpectation:
+  Enabled: true
+  EnforcedStyle: expect
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/MultipleExpectations:
+  Max: 3
+  AggregateFailuresByDefault: true
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/NotToNot:
+  EnforcedStyle: to_not
+
+Capybara/FeatureMethods:
+  Enabled: false
+
+#################### rubocop-performance #################
+
+Performance/CaseWhenSplat:
+  Enabled: true
+
+Performance/ChainArrayAllocation:
+  Enabled: true
+
+Performance/DoubleStartEndWith:
+  IncludeActiveSupportAliases: true
