@@ -7,24 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    # - uses: ./.github/actions/rubocop
-    # - uses: actions/setup-ruby@v1
-    # - name: Install RuboCop gems
-    #   run: gem install rubocop rubocop-rspec rubocop-performance
-    # - name: Run RuboCop
-    #   run: ruby tools/rubocop.rb
-    # - uses: azure/docker-login@v1
-    #   with:
-    #     username: zalex80@gmail.com
-    #     password: ${{ secrets.GITHUB_TOKEN }}
-    #     loginServer: docker.pkg.github.com
     - name: Run RuboCop Linter
-      # uses: docker://docker.pkg.github.com/alexanderzagaynov/rubocop-action/rubocop-action:0.0.1
-      uses: alexanderzagaynov/rubocop-action@master
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   DOCKER_USERNAME: zalex80@gmail.com
-      #   DOCKER_PASSWPORD: ${{ secrets.GITHUB_TOKEN }}
+      uses: AlexanderZagaynov/rubocop-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # build:
   #   runs-on: ubuntu-latest
