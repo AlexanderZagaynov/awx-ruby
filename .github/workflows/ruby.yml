@@ -7,10 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Run RuboCop Linter
-      uses: AlexanderZagaynov/rubocop-action@master
+    - uses: actions/setup-ruby@v1
+    - run: gem install rubocop rubocop-rspec rubocop-performance
+    - run: ruby .github/tools/rubocop.rb
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - uses: actions/upload-artifact@master
+    #   with:
+    #     name: env.json
+    #     path: env.json
 
   # build:
   #   runs-on: ubuntu-latest
